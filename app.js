@@ -1,11 +1,17 @@
 const express = require("express");
-const port = 5000;
+const path = require("path");
+const hbs = require("hbs");
+const port = 7000;
 const app = express();
 
 
 
 //View engine
+const viewPath = path.join(__dirname, "views");
+const partialsPath = path.join(__dirname, "views/partials");
 app.set("view engine", "hbs");
+app.set("views", viewPath);
+hbs.registerPartials(partialsPath);
 
 
 
@@ -21,12 +27,16 @@ app.get("/", (req, res)=>{
     })
     });
 
+
+
+  app.get("/country", (req, res)=>{
+    res.render("country",{
+        page : "Country"});
+  })  
+
     app.get("/about", (req, res)=>{
         res.render("about", {
             page : "About"
         })
         });
 
-// app.get("/", (req, res)=>{
-// res.send("Hello World")
-// });
