@@ -14,11 +14,28 @@
         h1{
             text-align: center;
         }
+     .container{
+    
+        height: 18rem;
+        width: 30rem;
+        background-color: gray;
+        border-radius: 1rem;
+     }
     </style>
 </head>
 <body>
      {{> header}}
     <h1>Welcome to {{page}} page</h1>
+  
+
+<div class="container">
+    <h1>Hello World</h1>
+    <label for="country">Select Country</label>
+    <select name="country" id="">
+        <option value="IND">IND</option>
+    </select>
+</div>
+
 
   <p>click here to go to about page <a href="/about">About Page</a></p>
 </body>
